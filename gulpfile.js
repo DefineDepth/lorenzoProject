@@ -8,11 +8,10 @@ const del = require('del');
 
 function server() {
   tasks.browserSync.init({
-    proxy: "localhost/MainFile/Projects/Canetis/template/dist/home-1.html",
+    proxy: "localhost/MainFile/Projects/lorenzo/dist/index.html",
     port: 80,
     notify: false,
   });
-
 
   gulp.watch( path.src.templates + '*.html' ).on('change', function(path, stats) {
     tasks.templates.renderSingle( path.replace(/\\/g, '/') );
@@ -26,7 +25,7 @@ function server() {
   gulp.watch( path.watch.css.vendors ).on('change', gulp.series( tasks.css.cssVendors, tasks.browserSync.reload ));
   
   gulp.watch( path.watch.js.main ).on('change', gulp.series( tasks.js.jsMain, tasks.browserSync.reload ));
-  gulp.watch( path.watch.js.vendors ).on('change', gulp.series( tasks.js.jsVendors, tasks.browserSync.reload ));
+  // gulp.watch( path.watch.js.vendors ).on('change', gulp.series( tasks.js.jsVendors, tasks.browserSync.reload ));
 
   gulp.watch( path.src.img, tasks.img );
   gulp.watch( path.src.fonts, tasks.fonts );
@@ -43,7 +42,6 @@ exports.cssVendors = tasks.css.cssVendors;
 exports.framework = tasks.css.framework;
 
 exports.jsMain = tasks.js.jsMain;
-exports.jsVendors = tasks.js.jsVendors;
 
 exports.fonts = tasks.fonts;
 exports.img = tasks.img;
@@ -54,7 +52,6 @@ exports.build = gulp.series(
     tasks.css.cssMain,
     tasks.css.cssVendors,
     tasks.js.jsMain,
-    tasks.js.jsVendors,
     tasks.fonts,
     tasks.img,
   ),

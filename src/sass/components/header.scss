@@ -1,0 +1,44 @@
+.header {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: rem(60px);
+  padding-bottom: rem(60px);
+  color: white;
+
+  &__logo {
+    font-size: rem(20px);
+    line-height: rem(26px);
+    font-weight: 700;
+  }
+
+  &__menu {
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    font-size: rem(14px);
+    line-height: 1;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: white;
+
+    &__bars {
+      display: flex;
+      flex-direction: column;
+      margin-left: rem(18px);
+
+      span {
+        width: rem(30px);
+        height: rem(1px);
+        background-color: white;
+    
+        + span {
+          margin-top: rem(8px);
+        }
+      }
+    }
+  }
+}
