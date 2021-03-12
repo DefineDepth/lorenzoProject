@@ -1,0 +1,160 @@
+.sliderMain.-type-3 {
+  overflow: visible;
+  position: relative;
+  z-index: 5;
+  height: 100vh;
+  width: 100%;
+
+  @include media-below(sm) {
+    height: calc(100vh - 3.75rem);
+  }
+
+  .swiper-col {
+    @include media-below(sm) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+    }
+  }
+  
+  .swiper-container {
+    width: 100%;
+
+    @include media-below(sm) {
+      height: calc(100vh - 3.75rem);
+    }
+  }
+}
+
+
+.sliderMain.-type-3 .slider {
+  &__img {
+    @include size(100%);
+
+    @include media-below(sm) {
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include size(100%);
+        background-color: rgba(black, 0.5);
+      }
+    }
+  }
+
+  &__img__cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include size(100%);
+    background-color: white;
+    transform-origin: left;
+  }
+
+  &__img__bg {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__content__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__content {
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+
+    &.is-active {
+      pointer-events: auto;
+    }
+
+    @include media-below(sm) {
+      width: 100%;
+    }
+  }
+
+  &__subtitle {
+    @include media-below(sm) {
+      color: white;
+    }
+  }
+
+  &__title {
+    font-size: 4vw;
+    @include media-below(lg) { font-size: 4.5vw; }
+    @include media-below(md) { font-size: 6vw; }
+    @include media-below(xs) { font-size: 9vw; }
+
+    @include media-below(sm) { color: white; }
+
+    .split__line { padding-bottom: rem(4px); }
+
+    &.-line-bg-white { background-color: white; }
+    &.-line-bg-black { background-color: black; }
+  }
+
+  &__button {
+    @include media-below(sm) {
+      .button {
+        color: black;
+        background-color: white;
+        border: 1px solid white;
+      }
+    }
+  }
+
+  &__navs {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    right: rem(48px);
+    z-index: 10;
+    transform: translateY(-50%) translateX(25%);
+
+    .navButton {
+      display: flex;
+      flex-flow: column nowrap;
+    }
+
+    @include media-below(sm) {
+      top: unset;
+      left: rem(24px);
+      right: rem(24px);
+      bottom: rem(24px);
+      transform: none;
+
+      .navButton {
+        flex-flow: row;
+        justify-content: space-between;
+
+        .navButton__item {
+          margin: 0 !important;
+          background-color: transparent;
+          border: rem(1px) solid #ffffff;
+          color: white;
+        
+          &:hover {
+            background-color: white;
+            color: black;
+          }
+        }
+      }
+    }
+
+    &.is-active {
+      pointer-events: auto;
+    }
+  }
+}

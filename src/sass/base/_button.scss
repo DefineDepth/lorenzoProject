@@ -1,0 +1,142 @@
+button {
+  padding: unset;
+  margin: unset;
+  border: unset;
+  border-radius: unset;
+  background-color: unset;
+}
+
+.button {
+  display: inline-block;
+  border: 0;
+
+  transition:
+    background-color 300ms $easeOutQuart,
+    color 300ms $easeOutQuart,
+    border 300ms $easeOutQuart;
+}
+
+
+.button {
+  &.-sm {
+    min-width: rem(120px);
+    padding: rem(15px) rem(27px);
+    @include mfont(rem(14px), 1, 500, capitalize, 0.03em);
+  }
+
+  &.-md {
+    min-width: rem(132px);
+    padding: rem(18px) rem(30px);
+    @include mfont(rem(15px), 1, 500, capitalize, 0.03em);
+
+    @include media-below(sm) {
+      padding: rem(15px) rem(24px);
+      font-size: rem(14px);
+    }
+  }
+
+  &.-lg {
+    min-width: rem(140px);
+    padding: rem(18px) rem(32px);
+    @include mfont(rem(16px), 1, 500, capitalize, 0.03em);
+
+    @include media-below(sm) {
+      padding: rem(18px) rem(32px);
+      font-size: rem(14px);
+    }
+  }
+}
+
+
+.button.-outline-white,
+.button.-outline-black,
+.button.-white,
+.button.-black {
+  text-align: center;
+  border-radius: rem(60px);
+
+  @include media-below(sm) {
+    min-width: rem(124px);
+  }
+}
+
+.button {
+  &.-white {
+    background-color: white;
+    border: rem(1px) solid white;
+  
+    &:hover {
+      background-color: transparent;
+      color: white;
+    }
+  }
+
+  &.-black {
+    background-color: #121212;
+    border: rem(1px) solid #121212;
+  
+    &:hover {
+      background-color: transparent;
+      color: #121212;
+    }
+  }
+
+  &.-outline-black {
+    background-color: transparent;
+    border: rem(1px) solid #121212;
+  
+    &:hover {
+      background-color: #121212;
+      color: white;
+    }
+  }
+
+  &.-outline-white {
+    background-color: transparent;
+    border: rem(1px) solid #ffffff;
+  
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+}
+
+
+.button.-underline {
+  position: relative;
+  padding-bottom: rem(2px);
+  transition: color 300ms $easeOutQuart;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    // height: rem(1px);
+    height: rem(2px);
+    background-color: currentColor;
+
+    transition: transform 300ms $easeInOutQuart;
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+  }
+}
+
+.button.-icon {
+  .icon {
+    transition: transform 0.3s $easeOutQuart;
+  }
+
+  &:hover {
+    .icon {
+      transform: translateX(rem(6px));
+    }
+  }
+}

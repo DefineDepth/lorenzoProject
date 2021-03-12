@@ -1,0 +1,26 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  // xl: 1230px
+  xl: 1260px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  // xl: 1200px
+  xl: 1232px
+);
+
+$grid-columns:      12;
+$grid-gutter-width: 32px;
+
+
+@import "./bootstrap/functions";
+@import "./bootstrap/variables";
+@import "./bootstrap/mixins";
+@import "./bootstrap/reboot";
+@import "./bootstrap/grid";

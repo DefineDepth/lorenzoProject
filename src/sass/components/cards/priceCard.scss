@@ -1,0 +1,38 @@
+.priceCard {
+  &__content {}
+
+  &__title {}
+
+  &__price {
+    letter-spacing: -0.05em;
+  }
+
+  &__list {}
+
+  &__badge {
+    display: inline-block;
+    padding: rem(8px) rem(10px);
+    line-height: 1;
+    border-radius: rem(6px);
+    background-color: #F0F0F0;
+
+    &.-light {
+      background-color: rgba(white, 0.08);
+    }
+  }
+
+  &__list li {
+    margin-bottom: rem(12px);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    p {
+      line-height: 1.3;
+    }
+  }
+
+  &__button {
+  }
+}

@@ -1,0 +1,242 @@
+/*--------------------------------------------------
+	06. Header
+---------------------------------------------------*/
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  height: $header-elements-y-gap * 2;
+
+  &__bar {
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+
+    padding: 0 $header-elements-x-gap;
+  }
+
+  @include media-below(sm) {
+    height: rem(60px);
+    &__bar { padding: 0 rem(24px); }
+  }
+
+
+  &__logo {
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+    font-size: rem(26px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  &__logo a {
+    height: 100%;
+  }
+
+  &__logo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-fit: cover;
+    transition: opacity 0.4s $easeOutQuart 0.05s;
+    opacity: 0;
+  }
+
+  &__menu {}
+}
+
+
+.header {
+  &.-classic {
+    @include media-above(md) {
+      .header__menu__wrap {
+        display: none !important;
+      }
+    }
+
+    @include media-below(md) {
+      .navClassic-wrap {
+        display: none;
+      }
+    }
+  }
+}
+
+
+.header {
+  .header__logo__dark {
+    position: relative;
+    opacity: 1;
+  }
+  .header__logo a        { color: black; }
+  .navClassic-list > li  { color: black; }
+  .menu-header-list li a { color: black; }
+  .header__menu .icon    { color: black; }
+}
+
+.header.-dark {
+  .header__logo__light {
+    position: relative;
+    opacity: 1;
+  }
+  .header__logo__dark {
+    position: absolute;
+    opacity: 0;
+  }
+  .header__logo a        { color: white; }
+  .navClassic-list > li  { color: white; }
+  .menu-header-list li a { color: white; }
+  .header__menu .icon    { color: white; }
+}
+
+
+.header.-sticky-initial.-sticky-light,
+.header.is-sticky.-sticky-light {
+  .header__bar {
+    background-color: #fff;
+    box-shadow: 0 rem(4px) rem(16px) rgba(0,0,0,.08);
+    opacity: 0.98;
+  }
+
+  .header__logo__light {
+    position: absolute;
+    opacity: 0;
+  }
+
+  .header__logo__dark {
+    position: relative;
+    opacity: 1;
+  }
+  
+  .header__logo a        { color: black; }
+  .navClassic-list > li  { color: black; }
+  .menu-header-list li a { color: black; }
+  .header__menu .icon    { color: black; }
+}
+
+
+.header.-sticky-initial.-sticky-light {
+  .header__bar {
+    box-shadow: none;
+  }
+
+  &.is-sticky .header__bar {
+    box-shadow: 0 rem(4px) rem(16px) rgba(0,0,0,.08);
+  }
+}
+
+
+.header.-sticky-initial.-sticky-dark,
+.header.is-sticky.-sticky-dark {
+  .header__bar {
+    background-color: var(--bg-dark-4);
+    opacity: 0.99;
+  }
+
+  .header__logo__light {
+    position: relative;
+    opacity: 1;
+  }
+
+  .header__logo__dark {
+    position: absolute;
+    opacity: 0;
+  }
+
+  .header__logo a        { color: white; }
+  .navClassic-list > li  { color: white; }
+  .menu-header-list li a { color: white; }
+  .header__menu .icon    { color: white; }
+}
+
+
+
+.header__menu .nav-button-open {
+  cursor: pointer;
+
+  .icon {
+    @include size(rem(36px));
+    stroke-width: 1.25;
+  }
+ 
+  &:hover .icon {
+    color: var(--accent-color) !important;
+  }
+}
+
+
+
+// Sticky header
+.header {
+  will-change: height, transform, background-color;
+
+  transition:
+    height 0.4s $easeInOutQuart 0.05s,
+    transform 0.3s $easeOutSine;
+
+  .header__bar {
+    transition:
+      box-shadow 0.4s $easeInOutQuart 0.05s,
+      background-color 0.4s $easeInOutQuart 0.05s;
+  }
+
+  .header__logo a {
+    transition: color 0.4s $easeInOutQuart 0.05s;
+  }
+
+  .header__menu .icon {
+    transition: color 0.4s $easeInOutQuart 0.05s;
+  }
+}
+
+.header {
+  &.is-pinned {
+    transform: translateY(0);
+  }
+
+  &.is-unpinned {
+    transform: translateY(-100%);
+  }
+
+  &.is-sticky {
+    position: fixed;
+    height: rem(68px);
+  }
+}
+
+// Sticky header
+
+
+
+
+
+
+
+
+// .admin-bar.logged-in .header-fixed {
+//   top: -rem(58px);
+// }
+
+// @media only screen and (max-width: 782px) {
+//   .admin-bar.logged-in .header-fixed {
+//     top: -rem(44px);
+//   }
+// }
+
+// @media only screen and (max-width: 600px) {
+//   .admin-bar.logged-in .header-fixed {
+//     top: -rem(90px);
+//   }
+// }

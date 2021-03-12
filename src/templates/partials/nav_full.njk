@@ -1,0 +1,32 @@
+{% if headerStyle == undefined %}
+  {% set headerStyle = '-light -sticky-light' %}
+  {# {% set headerStyle = '-dark -sticky-dark' %} #}
+{% endif %}
+
+<!-- header start -->
+<header class="header {{ headerStyle }} js-header">
+  <!-- header__bar start -->
+  <div class="header__bar">
+    <div class="header__logo js-header-logo">
+      <a data-barba href="home-1.html">
+        <img class="header__logo__light" src="img/logo/logo-light.png" alt="logo">
+      </a>
+      <a data-barba href="home-1.html">
+        <img class="header__logo__dark" src="img/logo/logo-dark.png" alt="logo">
+      </a>
+    </div>
+
+    <div class="header__menu js-header-menu">
+      <button type="button" class="nav-button-open js-nav-open">
+        <i class="icon" data-feather="menu"></i>
+      </button>
+    </div>
+  </div>
+  <!-- header__bar end -->
+
+
+  <!-- nav start -->
+  {% include "layouts/nav/navigation_links_full.njk" %}
+  <!-- nav end -->
+</header>
+<!-- header end -->

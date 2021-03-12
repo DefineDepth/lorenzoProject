@@ -1,0 +1,84 @@
+.backButton {
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.8);
+
+  transition:
+    transform 0.55s $easeOutCubic,
+    opacity 0.55s $easeOutCubic;
+
+  &.is-visible {
+    pointer-events: auto;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.backButton {
+  cursor: pointer;
+  position: fixed;
+	bottom: $header-elements-y-gap;
+  right: $header-elements-x-gap;
+  z-index: 200;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include size(rem(80px));
+
+  @include media-below(sm) {
+    bottom: rem(24px);
+    right: rem(24px);
+  }
+
+  @include media-below(xs) {
+    @include size(68px);
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: -1;
+    background-color: black;
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__icon__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__button {
+    color: white;
+    stroke-width: 0.75;
+    max-height: 100%;
+    @include size(rem(56px));
+
+    @include media-below(sm) {
+      @include size(52px);
+    }
+  
+    @include media-below(xs) {
+      @include size(44px);
+    }
+  }
+}
+
+
+.backButton {
+	.backButton__bg {
+    transition:
+      transform 0.55s $easeOutCubic,
+      opacity 0.55s $easeOutCubic;
+  }
+    
+  &:hover {
+    .backButton__bg {
+      transform: scale(1.1);
+    }
+  }
+}

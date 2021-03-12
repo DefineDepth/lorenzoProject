@@ -1,0 +1,57 @@
+form {
+  label,
+  p {
+    font-size: rem(15px);
+    line-height: 1;
+    color: black;
+  }
+
+  input[type="text"],
+  input[type="search"],
+  textarea,
+  input[type="email"] {
+    border: 0;
+    font-size: rem(19px);
+    line-height: 1.5;
+    font-weight: 500;
+
+    @include media-below(sm) {
+      font-size: rem(17px);
+    }
+
+    width: 100%;
+    padding: 14px 0;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(black, 0.2);
+    transition: border 0.4s $easeInOutQuart;
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid black;
+    }
+  }
+
+  ::placeholder {
+    font-weight: 400;
+  }
+}
+
+
+form.-light {
+  label,
+  p {
+    color: white;
+  }
+
+  input[type="text"],
+  input[type="search"],
+  textarea,
+  input[type="email"] {
+    color: white;
+    border-bottom: 1px solid rgba(white, 0.6);
+  }
+
+  ::placeholder {
+    color: rgba(white, 0.7);
+  }
+}

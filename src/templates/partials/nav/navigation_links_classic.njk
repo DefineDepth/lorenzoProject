@@ -1,0 +1,117 @@
+<div class="navClassic-wrap js-header-menu-classic">
+  <ul class="navClassic-list js-navClassic-list">
+    <li>
+      <a data-barba href="{{ navigation.classic.link }}">
+        {{ navigation.classic.title }}
+      </a>
+    </li>
+
+    <li class="menu-item-has-children">
+      <a>Main Pages</a>
+      
+      <ul class="subnav-list">
+        {% for link in navigation.home -%}
+          <li>
+            <a data-barba href="{{ link.link }}">{{ link.title }}</a>
+          </li>
+        {% endfor -%}
+      </ul>
+    </li>
+
+    <li class="menu-item-has-children">
+      <a>Inner Pages</a>
+      
+      <ul class="subnav-list">
+        <li class="menu-item-has-children">
+          <a>About</a>
+          
+          <ul class="subnav-list">
+            {% for link in navigation.about -%}
+              <li>
+                <a data-barba href="{{ link.link }}">{{ link.title }}</a>
+              </li>
+            {% endfor -%}
+          </ul>
+        </li>
+
+        <li class="menu-item-has-children">
+          <a>Services</a>
+          
+          <ul class="subnav-list">
+            {% for link in navigation.services -%}
+              <li>
+                <a data-barba href="{{ link.link }}">{{ link.title }}</a>
+              </li>
+            {% endfor -%}
+          </ul>
+        </li>
+
+        <li class="menu-item-has-children">
+          <a>404</a>
+          
+          <ul class="subnav-list">
+            {% for link in navigation.noPage -%}
+              <li>
+                <a data-barba href="{{ link.link }}">{{ link.title }}</a>
+              </li>
+            {% endfor -%}
+          </ul>
+        </li>
+
+        <li class="menu-item-has-children">
+          <a>Contact</a>
+
+          <ul class="subnav-list">
+            {% for link in navigation.contact -%}
+              <li>
+                <a data-barba href="{{ link.link }}">{{ link.title }}</a>
+              </li>
+            {% endfor -%}
+          </ul>
+        </li>
+
+        {% for link in navigation.innerPages -%}
+          <li>
+            <a data-barba href="{{ link.link }}">{{ link.title }}</a>
+          </li>
+        {% endfor -%}
+      </ul>
+    </li>
+    
+    <li class="menu-item-has-children">
+      <a>Portfolio</a>
+
+      <ul class="subnav-list">
+        {% for link in navigation.portfolio -%}
+          <li>
+            <a data-barba href="{{ link.link }}">{{ link.title }}</a>
+          </li>
+        {% endfor -%}
+      </ul>
+    </li>
+
+    <li class="menu-item-has-children">
+      <a>Works</a>
+
+      <ul class="subnav-list">
+        {% for link in navigation.works -%}
+          <li>
+            <a data-barba href="{{ link.link }}">{{ link.title }}</a>
+          </li>
+        {% endfor -%}
+      </ul>
+    </li>
+
+    <li class="menu-item-has-children">
+      <a>Blog</a>
+
+      <ul class="subnav-list">
+        {% for link in navigation.blog -%}
+          <li>
+            <a data-barba href="{{ link.link }}">{{ link.title }}</a>
+          </li>
+        {% endfor -%}
+      </ul>
+    </li>
+  </ul>
+</div>

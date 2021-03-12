@@ -1,0 +1,114 @@
+/*--------------------------------------------------
+	40. Navigation base
+---------------------------------------------------*/
+
+.navClassic-wrap {
+  height: 100%;
+
+  a {
+    cursor: pointer;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+}
+
+.navClassic-list {
+  display: flex;
+  height: 100%;
+
+  > li {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 rem(20px);
+
+    &:hover {
+      color: var(--accent-color);
+    }
+  }
+
+  .tippy-box {
+    border-radius: rem(4px);
+    min-width: rem(180px);
+    padding: rem(10px) 0;
+
+    &[data-placement^="right"],
+    &[data-placement^="left"] {
+      > .tippy-arrow { color: transparent; }
+      > .tippy-arrow::before { border-bottom-color: transparent; }
+    }
+  }
+
+  .tippy-box .tippy-content {
+    display: block;
+    position: relative;
+    white-space: nowrap;
+    padding: 0;
+
+    a {
+      display: block;
+      padding: rem(10px) rem(32px);
+      width: 100%;
+      font-size: rem(16px);
+
+      transition:
+        color 0.2s $easeOutCubic,
+        background-color 0.2s $easeOutCubic;
+    }
+  }
+
+  .subnav-list {
+    position: relative;
+    top: unset;
+
+    a {
+      transform: none;
+    }
+  }
+}
+
+
+.tippy-box[data-theme~='dark'] {
+  background-color: #111111;
+  box-shadow: 0 rem(4px) rem(15px) 0 rgba(black, 0.2);
+
+  > .tippy-arrow::before {
+    border-bottom-color: rgba(white, 0.1);
+  }
+
+  a {
+    color: white;
+  }
+
+  a:hover {
+    color: var(--accent-color);
+    background-color: rgba(white, 0.04);
+  }
+}
+
+.tippy-box[data-theme~='light'] {
+  background-color: #ffffff;
+  box-shadow: 0 rem(4px) rem(15px) 0 rgba(black, 0.1);
+
+  > .tippy-arrow::before {
+    border-bottom-color: rgba(white, 1);
+  }
+
+  a {
+    color: black;
+  }
+
+  a:hover {
+    color: var(--accent-color);
+    background-color: rgba(black, 0.03);
+  }
+}
+
+
+.tippy-box[data-animation='shift'][data-state='hidden'] {
+  opacity: 0;
+  transform: translateY(rem(20px));
+}

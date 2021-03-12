@@ -1,0 +1,22 @@
+/*--------------------------------------------------
+	Stycky post
+---------------------------------------------------*/
+
+.blog-item.sticky {
+	.blog-title {
+		display: inline-block;
+	}
+
+	.blog-title a {
+		position: relative;
+		text-decoration: underline;
+
+		&::after {
+			content: '*';
+			font-size: 2em;
+			position: absolute;
+			right: -.5em;
+			top: 0;
+		}
+	}
+}

@@ -1,0 +1,179 @@
+<nav class="nav js-nav">
+  <div class="nav__inner js-nav-inner">
+    <div class="nav__bg js-nav-bg"></div>
+
+    <div class="nav__container">
+      <div class="nav__header">
+        <button type="button" class="nav-button-back js-nav-back">
+          <i class="icon" data-feather="arrow-left-circle"></i>
+        </button>
+
+        <button type="button" class="nav-btn-close js-nav-close pointer-events-none">
+          <i class="icon" data-feather="x"></i>
+        </button>
+      </div>
+
+      <div class="nav__content">
+        <div class="nav__content__left">
+          <div class="navList__wrap">
+            <ul class="navList js-navList">
+              <li>
+                <a data-barba href="{{ navigation.classic.link }}">
+                  {{ navigation.classic.title }}
+                </a>
+              </li>
+
+              <li class="menu-item-has-children">
+                <a>Main Pages</a>
+                
+                <ul class="subnav-list">
+                  {% for link in navigation.home -%}
+                    <li>
+                      <a data-barba href="{{ link.link }}">{{ link.title }}</a>
+                    </li>
+                  {% endfor -%}
+                </ul>
+              </li>
+
+              <li class="menu-item-has-children">
+                <a>Inner Pages</a>
+                
+                <ul class="subnav-list">
+                  <li class="menu-item-has-children">
+                    <a>About</a>
+                    
+                    <ul class="subnav-list">
+                      {% for link in navigation.about -%}
+                        <li>
+                          <a data-barba href="{{ link.link }}">{{ link.title }}</a>
+                        </li>
+                      {% endfor -%}
+                    </ul>
+                  </li>
+
+                  <li class="menu-item-has-children">
+                    <a>Services</a>
+                    
+                    <ul class="subnav-list">
+                      {% for link in navigation.services -%}
+                        <li>
+                          <a data-barba href="{{ link.link }}">{{ link.title }}</a>
+                        </li>
+                      {% endfor -%}
+                    </ul>
+                  </li>
+
+                  <li class="menu-item-has-children">
+                    <a>404</a>
+                    
+                    <ul class="subnav-list">
+                      {% for link in navigation.noPage -%}
+                        <li>
+                          <a data-barba href="{{ link.link }}">{{ link.title }}</a>
+                        </li>
+                      {% endfor -%}
+                    </ul>
+                  </li>
+
+                  <li class="menu-item-has-children">
+                    <a>Contact</a>
+
+                    <ul class="subnav-list">
+                      {% for link in navigation.contact -%}
+                        <li>
+                          <a data-barba href="{{ link.link }}">{{ link.title }}</a>
+                        </li>
+                      {% endfor -%}
+                    </ul>
+                  </li>
+
+                  {% for link in navigation.innerPages -%}
+                    <li>
+                      <a data-barba href="{{ link.link }}">{{ link.title }}</a>
+                    </li>
+                  {% endfor -%}
+                </ul>
+              </li>
+              
+              <li class="menu-item-has-children">
+                <a>Portfolio</a>
+
+                <ul class="subnav-list">
+                  {% for link in navigation.portfolio -%}
+                    <li>
+                      <a data-barba href="{{ link.link }}">{{ link.title }}</a>
+                    </li>
+                  {% endfor -%}
+                </ul>
+              </li>
+
+              <li class="menu-item-has-children">
+                <a>Works</a>
+
+                <ul class="subnav-list">
+                  {% for link in navigation.works -%}
+                    <li>
+                      <a data-barba href="{{ link.link }}">{{ link.title }}</a>
+                    </li>
+                  {% endfor -%}
+                </ul>
+              </li>
+
+              <li class="menu-item-has-children">
+                <a>Blog</a>
+
+                <ul class="subnav-list">
+                  {% for link in navigation.blog -%}
+                    <li>
+                      <a data-barba href="{{ link.link }}">{{ link.title }}</a>
+                    </li>
+                  {% endfor -%}
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="nav__content__right">
+          <div class="nav__info">
+            <div class="nav__info__item js-navInfo-item">
+              <h5 class="text-sm tracking-none fw-500">
+                Address
+              </h5>
+
+              <div class="nav__info__content text-lg text-white mt-16">
+                <p>
+                  {{ GENERAL.address }}
+                </p>
+              </div>
+            </div>
+
+            <div class="nav__info__item js-navInfo-item">
+              <h5 class="text-sm tracking-none fw-500">
+                Socials
+              </h5>
+
+              <div class="nav__info__content text-lg text-white mt-16">
+                <a href="#">Behance</a>
+                <a href="#">Dribbble</a>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+              </div>
+            </div>
+
+            <div class="nav__info__item js-navInfo-item">
+              <h5 class="text-sm tracking-none fw-500">
+                Contact Us
+              </h5>
+
+              <div class="nav__info__content text-lg text-white mt-16">
+                <a href="#">{{ GENERAL.email }}</a>
+                <a href="#">{{ GENERAL.phone }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

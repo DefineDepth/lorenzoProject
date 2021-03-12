@@ -1,0 +1,52 @@
+.navButton {
+  display: flex;
+
+  &__item {
+    @include flexCenter;
+    width: rem(60px);
+    height: rem(60px);
+    border-radius: 100%;
+    min-width: unset !important;
+
+    transition:
+      background-color 0.3s $easeOutQuart,
+      color 0.3s $easeOutQuart,
+      border 0.3s $easeOutQuart;
+  }
+
+  .icon {
+    width: rem(32px);
+    height: rem(32px);
+    stroke-width: 1;
+  }
+
+  &.-sm .navButton__item {
+    width: rem(52px);
+    height: rem(52px);
+
+    .icon {
+      width: rem(28px);
+      height: rem(28px);
+    }
+  }
+
+  &.-md .navButton__item {
+    width: rem(60px);
+    height: rem(60px);
+
+    .icon {
+      width: rem(32px);
+      height: rem(32px);
+    }
+  }
+
+  &.-lg .navButton__item {
+    width: rem(68px);
+    height: rem(68px);
+
+    .icon {
+      width: rem(36px);
+      height: rem(36px);
+    }
+  }
+}

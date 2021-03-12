@@ -1,0 +1,140 @@
+.portfolioCard {
+  display: block;
+
+  &__img {
+    overflow: hidden;
+  }
+
+  &__img__inner {
+  }
+
+  &__category {}
+
+  &__title {}
+
+  &__link {}
+}
+
+
+
+$_portfolioEasing: $easeOutQuart;
+$_portfolioTime: 0.4s;
+
+
+.portfolioCard.-type-1.-hover {
+  .portfolioCard__img {
+    transition: transform $_portfolioTime $_portfolioEasing;
+  }
+
+  .portfolioCard__img__inner {
+    transition: transform $_portfolioTime $_portfolioEasing;
+  }
+
+  .portfolioCard__category,
+  .portfolioCard__title {
+    transition:
+      color $_portfolioTime $_portfolioEasing,
+      transform $_portfolioTime $_portfolioEasing;
+  }
+
+  &:hover {
+    .portfolioCard__img {
+      transform: scale(0.95);
+    }
+
+    .portfolioCard__img__inner {
+      transform: scale(1.10);
+    }
+
+    .portfolioCard__category {
+      transform: translateX(rem(32px));
+    }
+
+    .portfolioCard__title {
+      transform: translateX(rem(32px));
+      color: var(--accent-color);
+    }
+  }
+}
+
+
+.portfolioCard.-type-2 {
+  position: relative;
+
+  .portfolioCard__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(black, 0.8);
+    flex-direction: column;
+    
+    @include flexCenter;
+    @include size(100%);
+  }
+
+  .portfolioCard__content a {
+    position: relative;
+    z-index: 4;
+  }
+
+  .portfolioCard__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include size(100%);
+    z-index: 2;
+  }
+}
+
+
+.portfolioCard.-type-2.-hover {
+  .portfolioCard__img {
+    overflow: hidden;
+  }
+
+  .portfolioCard__img__inner {
+    transform: scale(1.01);
+    transition: transform 0.4s $_portfolioEasing;
+  }
+
+  .portfolioCard__content {
+    opacity: 0;
+    transition: opacity 0.4s $_portfolioEasing;
+
+    p,
+    a {
+      opacity: 0;
+      transform: translateY(rem(32px));
+
+      transition:
+        opacity 0.4s $_portfolioEasing,
+        transform 0.4s $_portfolioEasing;
+    }
+
+    h3 {
+      opacity: 0;
+      transform: translateY(rem(32px));
+
+      transition:
+        opacity 0.4s $_portfolioEasing 0.06s,
+        transform 0.4s $_portfolioEasing 0.06s;
+    }
+  }
+
+  &:hover {
+    .portfolioCard__img__inner {
+      transform: scale(1.08);
+    }
+
+    .portfolioCard__content {
+      opacity: 1;
+  
+      a,
+      p,
+      h3 {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  }
+}

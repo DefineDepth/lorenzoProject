@@ -1,0 +1,65 @@
+/*--------------------------------------------------
+	Quotes
+---------------------------------------------------*/
+
+.blogPost-single .blogPost-content {
+  > blockquote {
+    background-color: black;
+    border-radius: 6px;
+    padding: 16px 18px;
+    margin: 20px 0;
+  
+    p {
+      font-size: 20px;
+      color: white;
+      margin: 0;
+    }
+  
+    cite {
+      display: block;
+      color: rgba(white, 0.8);
+      font-weight: 500;
+      margin-top: 4px;
+    }
+  }
+}
+
+
+
+.blogPost-single .blogPost-content {
+	.wp-block-quote,
+	.wp-block-pullquote {
+		padding: 20px 24px;
+	  margin: 24px 0;
+
+		p {
+      margin: 0;
+		}
+
+		cite {
+			display: inline-block;
+			margin-top: 8px;
+		}
+	}
+
+	.wp-block-pullquote {
+		blockquote {
+			margin: 0;
+		}
+  }
+  
+  // .wp-block-quote,
+  // .wp-block-pullquote:not(.is-style-solid-color) {
+  //   border-left: 2px solid white;
+  //   background-color: rgba( white, 0.1 );
+
+  //   p {
+  //     color: white;
+  //   }
+
+  //   cite {
+  //     color: var(--gray-500);
+  //   }
+  // }
+}
+

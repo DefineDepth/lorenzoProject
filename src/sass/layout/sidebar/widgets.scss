@@ -1,0 +1,110 @@
+/*--------------------------------------------------
+	Widgets
+---------------------------------------------------*/
+
+.blogSidebar .widget_search {
+  .search__form {}
+
+  .search__wrap {
+    position: relative;
+    width: 100%;
+  }
+
+  input[type="search"] {
+    background-color: #F5F5F5;
+    padding: rem(16px);
+    padding-right: rem(56px);
+    font-size: rem(17px);
+  }
+
+  .search__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include flexCenter;
+    width: rem(56px);
+    height: 100%;
+
+    transition:
+      color 0.2s $easeOutCubic,
+      background-color 0.2s $easeOutCubic;
+
+    &:hover {
+      color: var(--accent-color);
+      background-color: rgba(black, 0.08);
+    }
+
+    .icon {
+      width: rem(24px);
+      height: rem(24px);
+      stroke-width: 1.75;
+    }
+  }
+}
+
+
+.blogSidebar .widget_recent_comments {
+  li {
+    margin-bottom: rem(20px);
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  .comment-author-link {
+    display: inline-block;
+    margin-bottom: rem(2px);
+  }
+
+  .comment-author-link a {}
+  
+  a {}
+}
+
+
+.blogSidebar .widget_recent_entries {
+  li {
+    margin-bottom: rem(20px);
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  span {
+    display: block;
+    margin-bottom: rem(2px);
+  }
+
+  a {}
+}
+
+
+.blogSidebar .widget_tag_cloud .tagcloud {
+  display: flex;
+  flex-wrap: wrap;
+
+  a {
+    font-size: rem(15px);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    padding: rem(6px) rem(10px);
+    background-color: rgba(black, 0.06);
+    border-radius: rem(4px);
+
+    transition:
+      color 0.3s $easeOutCubic,
+      background-color 0.3s $easeOutCubic;
+
+    &:hover {
+      color: white;
+      background-color: var(--accent-color);
+    }
+  }
+
+  a {
+    margin-right: rem(8px);
+    margin-bottom: rem(8px);
+  }
+}
