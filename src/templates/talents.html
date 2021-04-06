@@ -1,0 +1,30 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% extends "layouts/base.njk" %}
+
+
+{% block content %}
+
+{% include "partials/nav.njk" %}
+
+<section class="talents__section">
+  <div class="container">
+    <div class="row">
+      {% for item in range(6) %}
+        <div class="col-lg-4">
+          <a href="talents-single.html" class="talents__item">
+            <div class="talents__image">
+              <img src="#" alt="talent image">
+            </div>
+            <div class="talents__content">
+              <h4 class="talents__title">
+                BIG JORA
+              </h4>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

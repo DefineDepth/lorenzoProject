@@ -8,7 +8,7 @@ const del = require('del');
 
 function server() {
   tasks.browserSync.init({
-    proxy: "localhost/MainFile/Projects/lorenzo/dist/index.html",
+    proxy: "localhost/lorenzoProject/dist/index.html",
     port: 80,
     notify: false,
   });

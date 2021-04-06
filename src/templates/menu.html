@@ -1,0 +1,19 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% extends "layouts/base.njk" %}
+
+
+{% block content %}
+
+{% include "partials/nav.njk" %}
+
+<nav class="nav">
+  <div class="nav__bg_gradient"></div>
+  
+  <div class="nav__list">
+    <a href="index.html" class="nav__link">Home</a>
+    <a href="about.html" class="nav__link">About</a>
+    <a href="talents.html" class="nav__link">talents</a>
+  </div>
+</nav>
+
+{% endblock %}

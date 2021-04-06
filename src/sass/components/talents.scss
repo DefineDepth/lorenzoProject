@@ -1,0 +1,27 @@
+.talents {
+  &__section {
+    padding-top: rem(320px);
+    padding-bottom: rem(100px);
+  }
+
+  &__section__title {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: rem(100px);
+    font-size: rem(50px);
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__icon {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+  }
+
+  &__title {
+    margin-top: 24px;
+  }
+}
