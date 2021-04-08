@@ -1,14 +1,16 @@
 const path = require('./path');
 const gulp = require('gulp');
-const concat = require('gulp-concat');
-const include = require('gulp-include');
-const fileInclude = require('gulp-file-include');
- 
+const webpack = require('webpack-stream');
+const rename = require('gulp-rename');
+
 function jsMain() {
-  return gulp.src( path.src.js + 'main.js' )
-    .pipe(fileInclude({
-      prefix: '//=',
-    }))
+  return gulp.src(path.src.js + 'main.js')
+    .pipe(
+      webpack({
+        // Any configuration options...
+      })
+    )
+    .pipe(rename('main.js'))
     .pipe(gulp.dest(path.dist.js))
 }
 

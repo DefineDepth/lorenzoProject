@@ -3,7 +3,20 @@
   padding-bottom: rem(80px);
 
   &__logo {
-    height: 320px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .icon {
+      height: auto;
+      width: rem(320px);
+      max-width: 100%;
+      color: white;
+      stroke-width: 0.4;
+
+      @include media-below(md) {
+      }
+    }
   }
 
   &__text {
