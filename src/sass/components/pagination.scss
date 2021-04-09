@@ -1,0 +1,26 @@
+.slider-pagination {
+  position: relative;
+  bottom: unset;
+  left: unset;
+  display: none;
+  justify-content: center;
+
+  @include media-below(md) {
+    display: flex;
+  }
+
+  span {
+    width: rem(10px);
+    height: rem(10px);
+    background-color: rgba(white, 0.4);
+    transition: color 0.15s ease;
+  }
+
+  span + span {
+    margin-left: 10px;
+  }
+  
+  span.swiper-pagination-bullet-active {
+    background-color: white;
+  }
+}

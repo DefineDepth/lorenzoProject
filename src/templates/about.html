@@ -23,15 +23,16 @@
     </div>
   </div>
   <div class="aboutHeader__icon">
-    <div class="icon" data-feather="smile"></div>
+    <!-- <div class="icon" data-feather="smile"></div> -->
+    <img class="icon" src="img/about-smile.svg" alt="about smile icon">
   </div>
 </section>
 
 
 <section class="clients__section">
   <div class="container">
-    <div class="row">
-      <div class="col-12">
+    <div class="row justify-content-center">
+      <div class="col-10 col-md-12">
         <h2 class="clients__title about-title">
           Brand experience
         </h2>
@@ -40,7 +41,7 @@
 
     <div class="swiper-container js-clients-slider">
       <div class="row swiper-wrapper">
-        {% for item in range(4) %}
+        {% for item in range(8) %}
           <div class="col-lg-3 swiper-slide">
             <div class="clients__content">
               <div class="clients__img">
@@ -50,6 +51,8 @@
           </div>
         {% endfor %}
       </div>
+
+      <div class="swiper-pagination slider-pagination"></div>
     </div>
   </div>
 </section>
@@ -65,19 +68,24 @@
       </div>
     </div>
 
-    <div class="row services__grid">
-      {% for item in range(8) %}
-        <div class="col-lg-3 col-md-6">
-          <div class="services__content">
-            <div class="services__icon">
-              <i class="icon" data-feather="monitor"></i>
+    <div class="swiper-container js-services-slider">
+      <div class="row services__grid swiper-wrapper">
+        {% for item in range(8) %}
+          <div class="col-lg-3 col-md-6 swiper-slide">
+            <div class="services__content">
+              <div class="services__icon">
+                <!-- <i class="icon" data-feather="monitor"></i> -->
+                <img class="icon" src="img/about-service.svg" alt="service">
+              </div>
+              <h4 class="services__title">
+                UI/UX design
+              </h4>
             </div>
-            <h4 class="services__title">
-              Design audit
-            </h4>
           </div>
-        </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
+
+      <div class="swiper-pagination slider-pagination"></div>
     </div>
   </div>
 </section>
@@ -85,10 +93,8 @@
 
 <div class="contact__section">
   <div class="container contact__inner">
-    <div class=""></div>
-
     <div class="row contact__header">
-      <div class="col-xl-5 offset-xl-1">
+      <div class="col-xl-5 col-lg-8 offset-lg-1 col-11">
         <h2 class="contact__title">
           are you interested in our services?
         </h2>
@@ -96,16 +102,16 @@
           Do you want to know more about what we can do for you?
         </p>
       </div>
-      <div class="col-xl-5">
+      <div class="col-xl-5 col-lg-10 offset-xl-0 offset-lg-1">
         <form class="contact__form" action="POST">
           <div class="form-group">
             <input type="text" id="name" placeholder="Name">
           </div>
           <div class="form-group">
-            <input type="text" id="name" placeholder="Name">
+            <input type="text" id="email" placeholder="Email">
           </div>
           <div class="form-group">
-            <input type="text" id="name" placeholder="Name">
+            <input type="text" id="message" placeholder="Message">
           </div>
           <button class="form-button" type="submit">Send</button>
         </form>
@@ -113,7 +119,7 @@
     </div>
 
     <div class="row contact__footer">
-      <div class="col-xl-3 offset-xl-1">
+      <div class="col-lg-3 offset-lg-1 col-md-6 col-10">
         <div class="contact-info__content">
           <h4 class="contact-info__title">
             Office
@@ -123,7 +129,7 @@
           </p>
         </div>
       </div>
-      <div class="col-xl-3 offset-xl-1">
+      <div class="col-lg-3 offset-lg-1 offset-md-1 col-md-5">
         <div class="contact-info__content">
           <h4 class="contact-info__title">
             Socials
@@ -134,7 +140,7 @@
           <a href="#" class="contact-info__item">linkedin</a>
         </div>
       </div>
-      <div class="col-xl-2">
+      <div class="col-lg-2 col-md-6">
         <div class="contact-info__content">
           <h4 class="contact-info__title">
             Say Hi!
@@ -148,7 +154,7 @@
   </div>
 
   <div class="contact__icon">
-    <div class="icon" data-feather="globe"></div>
+    <img class="icon" src="img/about-globe.svg" alt="about smile icon">
   </div>
 </div>
 
