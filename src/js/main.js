@@ -11,7 +11,7 @@ import Swiper from 'swiper/bundle';
 
 function initComponents() {
   Feather.replace();
-
+  headerBar();
   clientsSectionSlider();
   servicesSectionSlider();
 }
@@ -70,7 +70,6 @@ function clientsSectionSlider() {
 }
 
 
-
 function servicesSectionSlider() {
   const slider = document.querySelector('.js-services-slider');
   if (!slider) return;
@@ -117,6 +116,19 @@ function servicesSectionSlider() {
   }
 
   init();
+}
+
+
+
+function headerBar() {
+  const bar = document.querySelector('.js-header');
+  if (!bar) return;
+
+  setTimeout(() => {
+    bar.classList.add('is-hidden');
+  }, 1000);
+
+  console.log('headerBar');
 }
 
 

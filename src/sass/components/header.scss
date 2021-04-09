@@ -1,5 +1,5 @@
 .header {
-  position: absolute;
+  position: fixed;
   width: 100%;
   display: flex;
   align-items: center;
@@ -40,5 +40,16 @@
         }
       }
     }
+  }
+}
+
+.header {
+  transition: opacity 0.2s ease-in-out;
+  opacity: 1;
+  pointer-events: auto;
+
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
   }
 }
