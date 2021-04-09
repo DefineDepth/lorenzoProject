@@ -124,9 +124,7 @@ function headerBar() {
   const bar = document.querySelector('.js-header');
   if (!bar) return;
 
-  setTimeout(() => {
-    bar.classList.add('is-hidden');
-  }, 1000);
+  // bar.classList.add('is-hidden');
 
   console.log('headerBar');
 }

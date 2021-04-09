@@ -334,7 +334,7 @@ h6 {
 }
 
 .header {
-  position: absolute;
+  position: fixed;
   width: 100%;
   display: flex;
   align-items: center;
@@ -368,6 +368,16 @@ h6 {
 }
 .header__button__bars span + span {
   margin-top: 0.5rem;
+}
+
+.header {
+  transition: opacity 0.2s ease-in-out;
+  opacity: 1;
+  pointer-events: auto;
+}
+.header.is-hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .homeSection {
