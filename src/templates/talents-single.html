@@ -6,15 +6,17 @@
 
 {% include "partials/nav.njk" %}
 
-<section class="talentsSingle-header">
+<section data-scroll-section class="talentsSingle-header">
   <div class="container">
     <div class="row">
-      <div class="col-xl-7">
-        <div class="talentsSingle-header__image"></div>
+      <div class="col-lg-7">
+        <div class="talentsSingle-header__image ratio ratio-9:10">
+          <img src="img/ginger.jpg" alt="talent photo">
+        </div>
       </div>
 
-      <div class="col-xl-6">
-        <div class="talentsSingle-header__content">
+      <div class="col-lg-6 offset-lg-6 talentsSingle-header__content">
+        <div data-scroll data-scroll-speed="-1">
           <h2 class="talentsSingle-header__title">
             Big jora
           </h2>
@@ -28,20 +30,54 @@
 </section>
 
 
-<section class="talentsSingle-socials">
+<section data-scroll-section class="talentsSingle-socials">
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2 class="talentsSingle-socials__title">Platforms</h2>
+        <div class="talentsSingle-socials__header">
+          <h2 class="talentsSingle-socials__header__title">Platforms</h2>
+          <div class="talentsSingle-socials__header__line"></div>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="container-fluid">
-    <div class="talentsSingle-socials__grid row">
-      {% for item in range(4) %}
-        <div class="talentsSingle-socials__item">
-          Item
+    <div class="row talentsSingle-socials__grid">
+      {% for item in [
+        {
+          icon: 'img/twitch.svg',
+          title: 'Twitch',
+          followers: '422.5k'
+        },
+        {
+          icon: 'img/instagram.svg',
+          title: 'Instagram',
+          followers: '422.5k'
+        },
+        {
+          icon: 'img/youtube.svg',
+          title: 'Youtube',
+          followers: '422.5k'
+        },
+        {
+          icon: 'img/twitter.svg',
+          title: 'Twitter',
+          followers: '422.5k'
+        }
+      ] %}
+        <div class="col-lg-3 col-md-6">
+          <div class="talentsSingle-socials__item">
+            <div class="talentsSingle-socials__icon">
+              <img src="{{ item['icon'] }}" alt="Social icon">
+            </div>
+            <h4 class="talentsSingle-socials__title">
+              {{ item['title'] }}
+            </h4>
+            <p class="talentsSingle-socials__followers">
+              {{ item['followers'] }}
+            </p>
+          </div>
         </div>
       {% endfor %}
     </div>
@@ -49,25 +85,29 @@
 </section>
 
 
-<section class="talentsSingle-cta">
+<section data-scroll-section class="talentsSingle-cta">
   <div class="container">
     <div class="talentsSingle-cta__inner">
       <div class="row">
-        <div class="col-xl-6 offset-xl-1">
+        <div class="col-lg-6 offset-lg-1">
           <h2 class="talentsSingle-cta__title">
-            Want to work with RXFASTA?
+            Want to<br>
+            work with<br>
+            RXFASTA?
           </h2>
           <p class="talentsSingle-cta__text">
             Simply click that sweet lookin’ button over the right, write a fancy email, and your message will go straight to Rxfasta where their team over here will read all the details and get back to you away.
           </p>
         </div>
 
-        <div class="col-xl-3 offset-xl-1">
+        <div class="col-lg-3 offset-lg-1">
           <div class="talentsSingle-cta__right">
-            <div class="talentsSingle-cta__arrow"></div>
+            <div class="talentsSingle-cta__arrow">
+              <img src="img/arrow.svg" alt="arrow icon">
+            </div>
             <div class="talentsSingle-cta__button">
-              <button class="button -md">
-                  Let's Talk
+              <button class="button">
+                Let's Talk
               </button>
             </div>
           </div>

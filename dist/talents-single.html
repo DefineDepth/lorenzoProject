@@ -19,33 +19,17 @@
   <link rel="stylesheet" href="css/main.css">
 
   <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-  <link rel="manifest" href="img/favicon/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
+
 
   <title>Loaded</title>
 </head>
 
 <body class="" data-barba="wrapper">
-  <div class="barba-container" data-barba="container">
-    <main>
+  <div data-scroll-container>
+    <main data-barba="container" data-barba-namespace="base">
 
 
-      <header class="header">
+      <header class="header js-header">
         <div class="container relative">
           <div class="row justify-content-between align-items-center">
             <div class="col-auto">
@@ -57,14 +41,14 @@
 
             <div class="col-auto">
               <div class="header__menu">
-                <div class="header__button">
+                <a href="menu.html" class="header__button">
                   Menu
                   <div class="header__button__bars">
                     <span></span>
                     <span></span>
                     <span></span>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -72,15 +56,17 @@
       </header>
 
 
-      <section class="talentsSingle-header">
+      <section data-scroll-section class="talentsSingle-header">
         <div class="container">
           <div class="row">
-            <div class="col-xl-7">
-              <div class="talentsSingle-header__image"></div>
+            <div class="col-lg-7">
+              <div class="talentsSingle-header__image ratio ratio-9:10">
+                <img src="img/ginger.jpg" alt="talent photo">
+              </div>
             </div>
 
-            <div class="col-xl-6">
-              <div class="talentsSingle-header__content">
+            <div class="col-lg-6 offset-lg-6 talentsSingle-header__content">
+              <div data-scroll data-scroll-speed="-1">
                 <h2 class="talentsSingle-header__title">
                   Big jora
                 </h2>
@@ -94,32 +80,75 @@
       </section>
 
 
-      <section class="talentsSingle-socials">
+      <section data-scroll-section class="talentsSingle-socials">
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <h2 class="talentsSingle-socials__title">Platforms</h2>
+              <div class="talentsSingle-socials__header">
+                <h2 class="talentsSingle-socials__header__title">Platforms</h2>
+                <div class="talentsSingle-socials__header__line"></div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="container-fluid">
-          <div class="talentsSingle-socials__grid row">
+          <div class="row talentsSingle-socials__grid">
 
-            <div class="talentsSingle-socials__item">
-              Item
+            <div class="col-lg-3 col-md-6">
+              <div class="talentsSingle-socials__item">
+                <div class="talentsSingle-socials__icon">
+                  <img src="img/twitch.svg" alt="Social icon">
+                </div>
+                <h4 class="talentsSingle-socials__title">
+                  Twitch
+                </h4>
+                <p class="talentsSingle-socials__followers">
+                  422.5k
+                </p>
+              </div>
             </div>
 
-            <div class="talentsSingle-socials__item">
-              Item
+            <div class="col-lg-3 col-md-6">
+              <div class="talentsSingle-socials__item">
+                <div class="talentsSingle-socials__icon">
+                  <img src="img/instagram.svg" alt="Social icon">
+                </div>
+                <h4 class="talentsSingle-socials__title">
+                  Instagram
+                </h4>
+                <p class="talentsSingle-socials__followers">
+                  422.5k
+                </p>
+              </div>
             </div>
 
-            <div class="talentsSingle-socials__item">
-              Item
+            <div class="col-lg-3 col-md-6">
+              <div class="talentsSingle-socials__item">
+                <div class="talentsSingle-socials__icon">
+                  <img src="img/youtube.svg" alt="Social icon">
+                </div>
+                <h4 class="talentsSingle-socials__title">
+                  Youtube
+                </h4>
+                <p class="talentsSingle-socials__followers">
+                  422.5k
+                </p>
+              </div>
             </div>
 
-            <div class="talentsSingle-socials__item">
-              Item
+            <div class="col-lg-3 col-md-6">
+              <div class="talentsSingle-socials__item">
+                <div class="talentsSingle-socials__icon">
+                  <img src="img/twitter.svg" alt="Social icon">
+                </div>
+                <h4 class="talentsSingle-socials__title">
+                  Twitter
+                </h4>
+                <p class="talentsSingle-socials__followers">
+                  422.5k
+                </p>
+              </div>
             </div>
 
           </div>
@@ -127,24 +156,28 @@
       </section>
 
 
-      <section class="talentsSingle-cta">
+      <section data-scroll-section class="talentsSingle-cta">
         <div class="container">
           <div class="talentsSingle-cta__inner">
             <div class="row">
-              <div class="col-xl-6 offset-xl-1">
+              <div class="col-lg-6 offset-lg-1">
                 <h2 class="talentsSingle-cta__title">
-                  Want to work with RXFASTA?
+                  Want to<br>
+                  work with<br>
+                  RXFASTA?
                 </h2>
                 <p class="talentsSingle-cta__text">
                   Simply click that sweet lookin’ button over the right, write a fancy email, and your message will go straight to Rxfasta where their team over here will read all the details and get back to you away.
                 </p>
               </div>
 
-              <div class="col-xl-3 offset-xl-1">
+              <div class="col-lg-3 offset-lg-1">
                 <div class="talentsSingle-cta__right">
-                  <div class="talentsSingle-cta__arrow"></div>
+                  <div class="talentsSingle-cta__arrow">
+                    <img src="img/arrow.svg" alt="arrow icon">
+                  </div>
                   <div class="talentsSingle-cta__button">
-                    <button class="button -md">
+                    <button class="button">
                       Let's Talk
                     </button>
                   </div>

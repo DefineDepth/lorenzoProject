@@ -1,16 +1,27 @@
+.c-scrollbar_thumb {
+  background-color: white;
+}
+
 .header {
+  z-index: 1000;
   position: fixed;
   width: 100%;
   display: flex;
   align-items: center;
+  color: white;
   padding-top: rem(60px);
   padding-bottom: rem(60px);
-  color: white;
+
+  @include media-below(md) {
+    padding-top: rem(30px);
+    padding-bottom: rem(30px);
+  }
 
   &__logo {
-    font-size: rem(20px);
-    line-height: rem(26px);
-    font-weight: 700;
+    font-size: rem(22px);
+    line-height: 1.2;
+    font-weight: 400;
+    letter-spacing: 0.02em;
   }
 
   &__menu {
@@ -19,24 +30,29 @@
   &__button {
     display: flex;
     align-items: center;
-    font-size: rem(14px);
+    font-size: rem(16px);
     line-height: 1;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
     text-transform: uppercase;
     color: white;
+
+    &:hover {
+      text-decoration: none;
+      color: white;
+    }
 
     &__bars {
       display: flex;
       flex-direction: column;
-      margin-left: rem(18px);
+      margin-left: rem(16px);
 
       span {
-        width: rem(30px);
+        width: rem(32px);
         height: rem(1px);
         background-color: white;
     
         + span {
-          margin-top: rem(8px);
+          margin-top: rem(10px);
         }
       }
     }

@@ -66,6 +66,7 @@ $aspect-ratios: (
   (2:3),
   (3:2),
   (3:4),
+  (9:10),
   (4:3),
   (16:9)
 ) !default;
@@ -77,18 +78,18 @@ $aspect-ratios: (
 //   <div class="ratio ratio-16:9">
 //
 //
-// @each $ratio in $aspect-ratios {
-//   @each $antecedent, $consequent in $ratio {
-//     @if (type-of($antecedent) != number) {
-//       @error "`#{$antecedent}` needs to be a number."
-//     }
+@each $ratio in $aspect-ratios {
+  @each $antecedent, $consequent in $ratio {
+    @if (type-of($antecedent) != number) {
+      @error "`#{$antecedent}` needs to be a number."
+    }
 
-//     @if (type-of($consequent) != number) {
-//       @error "`#{$consequent}` needs to be a number."
-//     }
+    @if (type-of($consequent) != number) {
+      @error "`#{$consequent}` needs to be a number."
+    }
 
-//     &.ratio-#{$antecedent}\:#{$consequent}::before {
-//       padding-bottom: ($consequent/$antecedent) * 100%;
-//     }
-//   }
-// }
+    .ratio.ratio-#{$antecedent}\:#{$consequent}::before {
+      padding-bottom: ($consequent/$antecedent) * 100%;
+    }
+  }
+}

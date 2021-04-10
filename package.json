@@ -43,6 +43,7 @@
     "feather-icons": "^4.28.0",
     "gsap": "npm:@gsap/business@^3.6.1",
     "gulp-include": "^2.4.1",
+    "locomotive-scroll": "^4.1.1",
     "modularscroll": "^1.0.7",
     "rollup": "^2.9.1"
   }

@@ -15,143 +15,33 @@ button {
   border: 0;
 
   transition:
-    background-color 300ms $easeOutQuart,
-    color 300ms $easeOutQuart,
-    border 300ms $easeOutQuart;
+    background-color 0.3s $easeOutQuart,
+    color 0.3s $easeOutQuart,
+    border 0.3s $easeOutQuart;
 }
 
 
 .button {
-  &.-sm {
-    min-width: rem(120px);
-    padding: rem(15px) rem(27px);
-    font-size: rem(14px);
-    line-height: 1;
-    font-weight: 500;
-    text-transform: capitalize;
-    letter-spacing: 0.03em;
-  }
+  border: 1px solid white;
+  border-radius: 200px;
+  color: white;
 
-  &.-md {
-    min-width: rem(132px);
-    padding: rem(18px) rem(30px);
-    font-size: rem(15px);
-    line-height: 1;
-    font-weight: 500;
-    text-transform: capitalize;
-    letter-spacing: 0.03em;
+  min-width: rem(220px);
+  padding: rem(24px) rem(32px);
+  font-size: rem(16px);
+  line-height: 1.6;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
 
-    @include media-below(sm) {
-      padding: rem(15px) rem(24px);
-      font-size: rem(14px);
-    }
-  }
-
-  &.-lg {
-    min-width: rem(140px);
-    padding: rem(18px) rem(32px);
-    font-size: rem(16px);
-    line-height: 1;
-    font-weight: 500;
-    text-transform: capitalize;
-    letter-spacing: 0.03em;
-
-    @include media-below(sm) {
-      padding: rem(18px) rem(32px);
-      font-size: rem(14px);
-    }
-  }
-}
-
-
-.button.-outline-white,
-.button.-outline-black,
-.button.-white,
-.button.-black {
-  text-align: center;
-  border-radius: rem(60px);
-
-  @include media-below(sm) {
-    min-width: rem(124px);
-  }
-}
-
-.button {
-  &.-white {
-    background-color: white;
-    border: rem(1px) solid white;
-  
-    &:hover {
-      background-color: transparent;
-      color: white;
-    }
-  }
-
-  &.-black {
-    background-color: #121212;
-    border: rem(1px) solid #121212;
-  
-    &:hover {
-      background-color: transparent;
-      color: #121212;
-    }
-  }
-
-  &.-outline-black {
-    background-color: transparent;
-    border: rem(1px) solid #121212;
-  
-    &:hover {
-      background-color: #121212;
-      color: white;
-    }
-  }
-
-  &.-outline-white {
-    background-color: transparent;
-    border: rem(1px) solid #ffffff;
-  
-    &:hover {
-      background-color: white;
-      color: black;
-    }
-  }
-}
-
-
-.button.-underline {
-  position: relative;
-  padding-bottom: rem(2px);
-  transition: color 300ms $easeOutQuart;
-
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-
+  @include media-below(md) {
     width: 100%;
-    height: rem(2px);
-    background-color: currentColor;
-
-    transition: transform 300ms $easeInOutQuart;
-    transform-origin: left;
-    transform: scaleX(0);
-  }
-
-  &:hover::before {
-    transform: scaleX(1);
-  }
-}
-
-.button.-icon {
-  .icon {
-    transition: transform 0.3s $easeOutQuart;
+    padding: rem(20px) rem(28px);
   }
 
   &:hover {
-    .icon {
-      transform: translateX(rem(6px));
-    }
+    background-color: white;
+    color: black;
   }
 }

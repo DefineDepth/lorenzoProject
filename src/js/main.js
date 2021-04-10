@@ -5,9 +5,15 @@ import getViewportWidth from './helpers/getViewportWidth';
 import Feather from "feather-icons";
 import barba from '@barba/core';
 import { gsap } from "gsap";
-
 import Swiper from 'swiper/bundle';
+import LocomotiveScroll from 'locomotive-scroll';
 
+
+window.APP = {};
+
+APP.html = document.querySelector('html');
+APP.body = document.querySelector('body');
+APP.scroll = scroll(document.querySelector('[data-scroll-container]'));
 
 function initComponents() {
   Feather.replace();
@@ -17,6 +23,27 @@ function initComponents() {
 }
 
 initComponents();
+
+barba.init({
+  transitions: [{
+    name: 'opacity-transition',
+    leave(data) {
+      return gsap.to(data.current.container, {
+        opacity: 0
+      });
+    },
+    after(data) {
+      return gsap.from(data.next.container, {
+        opacity: 0
+      });
+    },
+  }],
+});
+
+barba.hooks.after(() => {
+  APP.scroll.update();
+  initComponents();
+});
 
 //=======================================
 
@@ -131,13 +158,36 @@ function headerBar() {
 
 
 
-// barba.init({
-// });
+function scroll(container) {
+  console.log('scroll init');
 
-// window.App = {};
+  const scroll = new LocomotiveScroll({
+    // el: document.querySelector('[data-scroll-container]'),
+    el: container,
+    smooth: true,
+  });
 
-// App.html = document.querySelector('html');
-// App.body = document.querySelector('body');
+  // const bar = document.querySelector('.js-header');
+
+  scroll.on('scroll', (args) => {
+    // console.log(args.scroll.y);
+
+    // if (args.scroll.y > 300) {
+    //   bar.classList.add('is-hidden');
+    // } else {
+    //   bar.classList.remove('is-hidden');
+    // }
+  })
+
+  return scroll;
+}
+
+
+
+
+
+
+
 // // App.SMcontroller = new ScrollMagic.Controller();
 
 

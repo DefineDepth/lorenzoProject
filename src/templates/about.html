@@ -7,7 +7,7 @@
 {% include "partials/nav.njk" %}
 
 
-<section class="aboutHeader__section">
+<section class="aboutHeader__section" data-scroll-section>
   <div class="container">
     <div class="row">
       <div class="col-lg-10">
@@ -22,14 +22,14 @@
       </div>
     </div>
   </div>
-  <div class="aboutHeader__icon">
+  <div data-scroll data-scroll-speed="-1" class="aboutHeader__icon">
     <!-- <div class="icon" data-feather="smile"></div> -->
     <img class="icon" src="img/about-smile.svg" alt="about smile icon">
   </div>
 </section>
 
 
-<section class="clients__section">
+<section class="clients__section" data-scroll-section>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-10 col-md-12">
@@ -58,7 +58,7 @@
 </section>
 
 
-<section class="services__section">
+<section class="services__section" data-scroll-section>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -91,7 +91,7 @@
 </section>
 
 
-<div class="contact__section">
+<section class="contact__section" data-scroll-section>
   <div class="container contact__inner">
     <div class="row contact__header">
       <div class="col-xl-5 col-lg-8 offset-lg-1 col-11">
@@ -153,10 +153,10 @@
     </div>
   </div>
 
-  <div class="contact__icon">
+  <div data-scroll data-scroll-speed="-4" class="contact__icon">
     <img class="icon" src="img/about-globe.svg" alt="about smile icon">
   </div>
-</div>
+</section>
 
 
 {% endblock %}
