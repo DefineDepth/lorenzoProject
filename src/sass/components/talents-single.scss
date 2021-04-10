@@ -1,6 +1,7 @@
 .talentsSingle-header {
   padding-top: rem(210px);
   padding-bottom: rem(150px);
+  overflow: visible;
 
   @include media-below(md) {
     padding-top: rem(120px);
@@ -248,5 +249,24 @@
       margin-top: rem(48px);
       width: 100%;
     }
+  }
+}
+
+
+.test-bg {
+  &::after {
+    content: "";
+    background: radial-gradient(circle,#fff 0,hsla(0,0%,100%,0) 60%);
+    display: block;
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    opacity: 0.1;
+    transform: translate(-50%,-50%);
+    // height: 192rem;
+    // width: 192rem;
+    height: 120rem;
+    width: 120rem;
+    z-index: -1;
   }
 }

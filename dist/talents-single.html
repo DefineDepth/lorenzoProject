@@ -33,30 +33,48 @@
         <div class="container relative">
           <div class="row justify-content-between align-items-center">
             <div class="col-auto">
-              <div class="header__logo">
+              <a href="index.html" class="header__logo">
                 <!-- <img src="#" alt="site logo"> -->
                 LOADED
-              </div>
+              </a>
             </div>
 
             <div class="col-auto">
               <div class="header__menu">
-                <a href="menu.html" class="header__button">
+                <button class="header__button -open js-nav-open">
                   Menu
-                  <div class="header__button__bars">
+                  <div class="header__button__open__bars">
                     <span></span>
                     <span></span>
                     <span></span>
                   </div>
-                </a>
+                </button>
+
+                <button class="header__button -close pointer-events-none js-nav-close">
+                  Close
+                  <i class="icon" data-feather="x"></i>
+                </button>
               </div>
             </div>
           </div>
         </div>
+
+        <nav class="nav pointer-events-none js-nav">
+          <div class="nav__bg js-nav-bg"></div>
+
+          <div class="nav__list js-nav-list">
+            <a href="index.html" class="nav__link">Home</a>
+            <a href="about.html" class="nav__link">About</a>
+            <a href="talents.html" class="nav__link">Talents</a>
+          </div>
+        </nav>
       </header>
 
 
       <section data-scroll-section class="talentsSingle-header">
+
+        <div class="test-bg"></div>
+
         <div class="container">
           <div class="row">
             <div class="col-lg-7">

@@ -12,6 +12,11 @@
   padding-top: rem(60px);
   padding-bottom: rem(60px);
 
+  .container {
+    position: relative;
+    z-index: 10;
+  }
+
   @include media-below(md) {
     padding-top: rem(30px);
     padding-bottom: rem(30px);
@@ -36,12 +41,13 @@
     text-transform: uppercase;
     color: white;
 
+
     &:hover {
       text-decoration: none;
       color: white;
     }
 
-    &__bars {
+    &__open__bars {
       display: flex;
       flex-direction: column;
       margin-left: rem(16px);
@@ -55,6 +61,26 @@
           margin-top: rem(10px);
         }
       }
+    }
+
+    .icon {
+      margin-left: rem(8px);
+      width: rem(48px);
+      height: rem(48px);
+      stroke-width: 0.5;
+    }
+
+    &.-open {
+      position: relative;
+    }
+
+    &.-close {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      opacity: 0;
     }
   }
 }

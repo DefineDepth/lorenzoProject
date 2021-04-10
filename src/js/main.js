@@ -17,6 +17,7 @@ APP.scroll = scroll(document.querySelector('[data-scroll-container]'));
 
 function initComponents() {
   Feather.replace();
+  menu();
   headerBar();
   clientsSectionSlider();
   servicesSectionSlider();
@@ -154,6 +155,81 @@ function headerBar() {
   // bar.classList.add('is-hidden');
 
   console.log('headerBar');
+}
+
+
+
+function menu() {
+  const nav = document.querySelector('.js-nav');
+  if (!nav) return;
+
+  console.log('menu init');
+
+  const buttonOpen = document.querySelector('.js-nav-open');
+  const buttonClose = document.querySelector('.js-nav-close');
+  const background = document.querySelector('.js-nav-bg');
+  const list = document.querySelector('.js-nav-list');
+  const links = list.querySelectorAll('a');
+
+  const open = () => {
+    gsap.timeline()
+      .to(buttonOpen, {
+        opacity: 0,
+        duration: 0.3,
+        ease: "power3.out",
+        onStart: () => {
+          buttonOpen.classList.add('pointer-events-none');
+        },
+      })
+      .to(buttonClose, {
+        opacity: 1,
+        duration: 0.3,
+        ease: "power3.out",
+      }, '<')
+      .to(nav, {
+        opacity: 1,
+        duration: 1,
+        ease: "power3.inOut",
+        onComplete: () => {
+          buttonOpen.classList.add('pointer-events-none');
+          buttonClose.classList.remove('pointer-events-none');
+          nav.classList.remove('pointer-events-none');
+        },
+      }, '<')
+  }
+  
+  const close = () => {
+    gsap.timeline()
+      .to(buttonClose, {
+        opacity: 0,
+        duration: 0.3,
+        ease: "power3.out",
+        onStart: () => {
+          buttonClose.classList.add('pointer-events-none');
+          nav.classList.add('pointer-events-none');
+        },
+      })
+      .to(buttonOpen, {
+        opacity: 1,
+        duration: 0.3,
+        ease: "power3.out",
+      }, '<')
+      .to(nav, {
+        opacity: 0,
+        duration: 1,
+        ease: "power3.inOut",
+        onComplete: () => {
+          buttonOpen.classList.remove('pointer-events-none');
+        },
+      }, '<')
+  }
+
+  const init = () => {
+    buttonOpen.addEventListener('click', open);
+    buttonClose.addEventListener('click', close);
+  }
+
+  init();
 }
 
 

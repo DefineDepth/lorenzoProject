@@ -282,6 +282,10 @@ h6 {
   padding-top: 3.75rem;
   padding-bottom: 3.75rem;
 }
+.header .container {
+  position: relative;
+  z-index: 10;
+}
 @media (max-width: 991px) {
   .header {
     padding-top: 1.875rem;
@@ -307,18 +311,34 @@ h6 {
   text-decoration: none;
   color: white;
 }
-.header__button__bars {
+.header__button__open__bars {
   display: flex;
   flex-direction: column;
   margin-left: 1rem;
 }
-.header__button__bars span {
+.header__button__open__bars span {
   width: 2rem;
   height: 0.0625rem;
   background-color: white;
 }
-.header__button__bars span + span {
+.header__button__open__bars span + span {
   margin-top: 0.625rem;
+}
+.header__button .icon {
+  margin-left: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  stroke-width: 0.5;
+}
+.header__button.-open {
+  position: relative;
+}
+.header__button.-close {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
 }
 
 .header {
@@ -885,6 +905,7 @@ h6 {
 .talentsSingle-header {
   padding-top: 13.125rem;
   padding-bottom: 9.375rem;
+  overflow: visible;
 }
 @media (max-width: 991px) {
   .talentsSingle-header {
@@ -1128,6 +1149,20 @@ h6 {
   }
 }
 
+.test-bg::after {
+  content: "";
+  background: radial-gradient(circle, #fff 0, rgba(255, 255, 255, 0) 60%);
+  display: block;
+  position: absolute;
+  top: 50vh;
+  left: 50%;
+  opacity: 0.1;
+  transform: translate(-50%, -50%);
+  height: 120rem;
+  width: 120rem;
+  z-index: -1;
+}
+
 .nav {
   position: absolute;
   top: 0;
@@ -1137,15 +1172,17 @@ h6 {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 5;
+  opacity: 0;
 }
-.nav__bg_gradient {
+.nav__bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
   z-index: -1;
-  opacity: 0.2;
+  background-color: #080808;
 }
 .nav__list {
   text-align: center;
