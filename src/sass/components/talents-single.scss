@@ -1,3 +1,14 @@
+canvas { 
+	display: block; 
+	position: fixed;
+	z-index: -1; // put it to background
+	left: 0; // position it to fill the whole screen
+	top: 0; // position it to fill the whole screen
+}
+
+
+
+
 .talentsSingle-header {
   padding-top: rem(210px);
   padding-bottom: rem(150px);

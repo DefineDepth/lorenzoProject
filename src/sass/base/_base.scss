@@ -57,10 +57,11 @@ a {
   font-size: inherit;
   line-height: inherit;
   font-weight: inherit;
-  transition: color 200ms ease-in-out;
+  transition: color 0.2s ease-in-out;
 
 	&:hover {
-		// text-decoration: none;
+		text-decoration: none;
+    color: var(--main-color);
   }
 }
 

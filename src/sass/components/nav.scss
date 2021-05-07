@@ -43,6 +43,7 @@
     transition: all 0.2s ease-in-out;
     
     &:hover {
+      color: rgba(white, 0.2);
       text-decoration: none;
       background: -webkit-linear-gradient(130.18deg, #FF7A00 0.02%, #DB00FF 102.41%);
       -webkit-background-clip: text;
