@@ -7719,10 +7719,33 @@ canvas {
   height: auto;
 }
 
-canvas {
-  display: block;
+.wrap {
+  padding: 25vw;
+}
+
+#canvas {
+  /* make the canvas wrapper fits the document */
   position: fixed;
-  z-index: 2000;
-  left: 0;
   top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.plane {
+  /* define the size of your plane */
+  width: 100%;
+  height: 66.66vh;
+  margin-bottom: 25vh;
+}
+
+.plane:nth-child(even) {
+  margin-left: 20vw !important;
+  margin-top: -35vh;
+}
+
+.plane img {
+  /* hide the img element */
+  max-width: 100%;
+  display: none;
 }

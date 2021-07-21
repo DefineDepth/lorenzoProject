@@ -41,12 +41,14 @@
     "@barba/core": "^2.9.7",
     "@rollup/plugin-commonjs": "^11.1.0",
     "charming": "^3.0.2",
+    "curtainsjs": "^8.1.2",
     "ev-emitter": "^2.1.0",
     "feather-icons": "^4.28.0",
     "gsap": "npm:@gsap/business@^3.6.1",
     "gulp-include": "^2.4.1",
     "locomotive-scroll": "^4.1.1",
     "modularscroll": "^1.0.7",
+    "pixi.js": "^6.0.2",
     "rollup": "^2.9.1",
     "simple-input-events": "^2.0.0"
   }
